@@ -1,0 +1,9 @@
+ {
+   "mcpServers": {
+     "NX-CDD-api": {
+       "type": "http",
+       "url": "http://112.132.229.234:8017/nxcdd"
+     }
+   },
+   "hooks": {}
+ }

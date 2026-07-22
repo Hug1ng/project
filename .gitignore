@@ -1,0 +1,39 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temp / Logs
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Build / Binary
+*.dll
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.idb
+
+# NX PRT（超过 GitHub 100MB 限制）
+*.prt
+
+# Runtime
+*.combined.cpp
+
+# Archives
+_archive/
+*.zip
+*.7z

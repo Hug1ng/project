@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where cl.exe)",
+      "Bash(dir \"C:\\\\Program Files\\\\Microsoft Visual Studio\")",
+      "Bash(dir \"C:\\\\Program Files \\(x86\\)\\\\Microsoft Visual Studio\")",
+      "Bash(dir \"C:\\\\Program Files\\\\Siemens\\\\NX\"*)",
+      "Bash(dir \"C:\\\\Siemens\\\\NX\"*)",
+      "Bash(powershell -Command \"\n\\\\$sourceCode = Get-Content -LiteralPath 'E:\\\\\\\\AAAA\\\\\\\\knowledge\\\\\\\\standards\\\\\\\\detect_sharp_steel.cpp' -Raw -Encoding UTF8\n\\\\$body = @{\n    jsonrpc = '2.0'\n    id = 1\n    method = 'tools/call'\n    params = @{\n        name = 'compile_nx_code'\n        arguments = @{\n            code = \\\\$sourceCode\n            ugVersion = 'UG2306'\n        }\n    }\n} | ConvertTo-Json -Depth 10 -Compress\n\n\\\\$headers = @{\n    'Accept' = 'application/json, text/event-stream'\n    'Content-Type' = 'application/json'\n}\n\ntry {\n    \\\\$response = Invoke-WebRequest -UseBasicParsing -Method Post -Uri 'http://112.132.229.234:8017/nxcdd' -Headers \\\\$headers -Body \\\\$body -TimeoutSec 120\n    Write-Output \\\\$response.Content\n} catch {\n    Write-Output \\\\\"Error: \\\\$_\\\\\"\n    if \\(\\\\$_.Exception.Response\\) {\n        \\\\$reader = New-Object System.IO.StreamReader\\(\\\\$_.Exception.Response.GetResponseStream\\(\\)\\)\n        Write-Output \\\\$reader.ReadToEnd\\(\\)\n    }\n}\n\")",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\\\\\(x86\\\\\\)/Microsoft Visual Studio/**)",
+      "Read(//c/Program Files/Siemens/**)",
+      "Read(//c//**)",
+      "Read(//d//**)",
+      "Bash(export STEEL_PRT_PATH=\"E:\\\\asd44\\\\Documents\\\\UI\\\\考核\\\\错误分型面1已带产品.prt\")",
+      "Bash(export STEEL_OUTPUT_PATH=\"E:\\\\AAAA\\\\workspace\\\\reports\\\\diagnosis_20260721_223128.json\")",
+      "Bash(\"E:\\\\AAAA\\\\knowledge\\\\standards\\\\playdll_v2.exe\" \"E:\\\\AAAA\\\\knowledge\\\\standards\\\\detect_sharp_steel.dll\")",
+      "Bash(powershell -File \"E:\\\\AAAA\\\\scripts\\\\compile-and-run.ps1\" -Action detect -PrtPath \"E:\\\\asd44\\\\Documents\\\\UI\\\\考核\\\\错误分型面1已带产品.prt\")",
+      "Bash(powershell -File \"E:\\\\AAAA\\\\workspace\\\\run_detect.ps1\")",
+      "Read(//e/Program Files/**)",
+      "Bash(cmd //c \"E:\\\\AAAA\\\\workspace\\\\run_detect.bat\")",
+      "Bash(export STEEL_PRT_PATH=\"E:\\\\\\\\asd44\\\\\\\\Documents\\\\\\\\UI\\\\\\\\考核\\\\\\\\错误分型面1已带产品.prt\")",
+      "Bash(export STEEL_OUTPUT_PATH=\"E:\\\\\\\\AAAA\\\\\\\\workspace\\\\\\\\reports\\\\\\\\diagnosis_20260722_084844.json\")",
+      "Bash(\"E:\\\\\\\\AAAA\\\\\\\\knowledge\\\\\\\\standards\\\\\\\\playdll_v2.exe\" \"E:\\\\\\\\AAAA\\\\\\\\knowledge\\\\\\\\standards\\\\\\\\detect_sharp_steel.dll\")",
+      "Bash(powershell -NoProfile -ExecutionPolicy Bypass -File \"E:\\\\AAAA\\\\scripts\\\\build-local.ps1\" -BuildType fix 2>&1)",
+      "Bash(powershell -NoProfile -ExecutionPolicy Bypass -File \"E:\\\\AAAA\\\\scripts\\\\build-local.ps1\" -BuildType fix)",
+      "Bash(python3 -c ' *)",
+      "Bash(python *)"
+    ]
+  }
+}
